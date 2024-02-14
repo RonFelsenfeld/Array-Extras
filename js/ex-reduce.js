@@ -126,20 +126,15 @@ function findModes(values) {
 // Task C
 console.log('******* TASK C *******')
 
-var input = ['hello', [9, 6], 18, [4, 7, 8]]
+var input = ['hello', [['a', [1, 2, 3], 'b', 'c'], 9, 6], 18, [4, 7, 8]]
 var expected = ['hello', 9, 6, 18, 4, 7, 8]
 var actual = flatten(input)
 console.log('INPUT:', input, '\nEXPECTED:', expected, '\nACTUAL:', actual)
 
 function flatten(values) {
-  const flattenArray = values.reduce((acc, val) => {
-    if (Array.isArray(val)) {
-      val.forEach((value) => acc.push(value))
-    } else {
-      acc.push(val)
-    }
+  return values.reduce((acc, val) => {
+    if (Array.isArray(val)) acc.push(...flatten(val))
+    else acc.push(val)
     return acc
   }, [])
-
-  return flattenArray
 }
