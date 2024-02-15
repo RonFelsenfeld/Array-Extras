@@ -31,7 +31,7 @@ console.log(
 function multBy(nums, multiplier, isImmutable) {
   // If immutable --> return a new array
   if (isImmutable) {
-    return nums.map((num) => num * multiplier)
+    return nums.map(num => num * multiplier)
   }
   // If is mutable --> modified the original array
   nums.forEach((num, i, arr) => (arr[i] = num * multiplier))

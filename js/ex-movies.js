@@ -13,7 +13,7 @@ var gMovies = [
 console.log(getMovieLink('tt0373889'))
 
 function getMovieLink(imdb) {
-  const movie = gMovies.find((movie) => movie.imdb === imdb)
+  const movie = gMovies.find(movie => movie.imdb === imdb)
   const linkStr = `<a href="https://www.imdb.com/title/${movie.imdb}/">${movie.name}</a>`
   return linkStr
 }
@@ -24,7 +24,7 @@ function getMovieLink(imdb) {
 // console.log(gMovies)
 
 function deleteMovie(imdb) {
-  const movieIdx = gMovies.findIndex((movie) => movie.imdb === imdb)
+  const movieIdx = gMovies.findIndex(movie => movie.imdb === imdb)
   gMovies.splice(movieIdx, 1)
   return gMovies
 }
